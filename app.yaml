@@ -1,0 +1,28 @@
+application: abhikvibe
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /assets
+  static_dir: assets
+  
+- url: /i
+  static_dir: i
+  
+- url: /templates
+  static_dir: templates
+ 
+- url: /.*
+  script: blobstore.app
+
+- url: /.*
+  script: helloworld.app
+
+libraries:
+- name: jinja2
+  version: latest

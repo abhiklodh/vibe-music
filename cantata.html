@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="google-site-verification" content="TaijDLTwoestLnPCMwbc9neZBXD_w7b_gIlCnyq0rWM" />
+    <meta charset="utf-8">
+    <title>VIBE - Enjoy music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+      
+<!-- Loading Bootstrap -->
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <style type="text/css">
+	.footer p{
+		margin-right: 20px;
+	}
+    .center{
+        text-align: center;        
+    }
+    .site-title{
+        /*color: orange;
+        color: rgba(255, 165, 0, 0.73);*/
+       text-shadow: 2px 2px 2px black;
+    }
+    body{
+        background-color: whitesmoke;
+    }
+   </style>
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+      
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54977485-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+   
+      <!--
+      <form action="/sign" method="post">
+          <div><label>Avatar:</label></div>
+          <div><input type="file" name="img"/></div>
+          <div><textarea name="content" rows="3" cols="60"></textarea></div>
+          <div><input type="submit" value="Sign Guestbook"></div>
+      </form>
+      -->
+      
+      
+    
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">VIBE</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="/" style="margin: 0; padding: 0;"><img src="/i/cantata.png"/></a>
+              </li>
+             <!-- <li class="">
+                <a href="/search">Search</a>
+              </li>
+              <li class="">
+                <a href="./base-css.html">Base CSS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">Components</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">Javascript plugins</a>
+              </li>
+              <li class="">
+                <a href="./less.html">Using LESS</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./download.html">Customize</a>
+              </li>
+              <li class="">
+                <a href="./examples.html">Examples</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron masthead">
+     <h3>Welcome {{ user_nickname }}</h3>
+     <!--<h4>Disclaimer!Please don't keep refreshing or revisitng the site in 1 hour a lot because it will disable the site!</h4>-->
+  <div class="inner">
+
+    <h1 class="site-title">VIBE</h1>
+    <p>One stop for your music needs!</p>
+      
+      
+      <p class="download-info">
+      <a href="javascript:toggle('uploadMusic');" class="btn btn-primary btn-large">Upload Music</a>
+      <a href="/search" class="btn btn-primary btn-large btn-block">View Music Store<small> - All Songs</small></a>
+      </p>
+      
+      <form action="{{ upload_url }}" method="POST" enctype="multipart/form-data">
+          
+          <div id="uploadMusic" class="form-actions" style="text-align: center;display: none;">
+              <input type="file" name="file">
+                  <button type="submit" class="btn btn-primary">Upload Music</button>
+                  <button type="button" onclick="toggle('uploadMusic');" class="btn btn-primary btn-lg">Cancel</button>
+          </div>
+      </form>
+      
+  </div>
+<!--
+  <div class="bs-links">
+    <ul class="quick-links">
+      <li><a href="./upgrading.html">Upgrading from 1.4</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/zipball/master">Download with docs</a></li>
+      <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
+      <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+    </ul>
+    <ul class="quick-links">
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
+      </li>
+      <li>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+      </li>
+      <li class="follow-btn">
+        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+      </li>
+      <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+      </li>
+    </ul>
+  </div> -->
+</header>
+
+<hr class="soften">
+
+<div class="marketing">
+    <h1>Your Music Store  <small>-from all artists.</small></h1>
+  <div class="form-actions" style="text-align: center;">
+    <button type="button" onclick="viewMyStore('viewMyStore')" class="btn btn-embossed btn-primary">View my Store</button>
+  </div>
+    
+  <div id="viewMyStore" style="display: none;" class="center">
+    {% for userMusic in songs %}
+    
+    {% if userMusic.blob_key %}
+    <div><audio controls="" width="600" height="50" name="media"><source src="http://{{ url }}/serve/{{ userMusic.blob_key.key() }}" type="audio/mp3"></audio></div>        
+    {% else %}
+    <div>An anonymous person wrote:</div>
+    {% endif %}
+    {% endfor %}    
+  </div>
+ <!-- <hr class="soften"> -->
+<!--
+  <h1>Built with Bootstrap.</h1>
+  <p class="marketing-byline">For even more sites built with Bootstrap, <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">visit the unofficial Tumblr</a> or <a href="./examples.html">browse the examples</a>.</p>
+  <ul class="thumbnails example-sites">
+    <li class="span3">
+      <a class="thumbnail" href="http://soundready.fm/" target="_blank">
+        <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://kippt.com/" target="_blank">
+        <img src="assets/img/example-sites/kippt.png" alt="Kippt">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://www.fleetio.com/" target="_blank">
+        <img src="assets/img/example-sites/fleetio.png" alt="Fleetio">
+      </a>
+    </li>
+    <li class="span3">
+      <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
+        <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
+      </a>
+    </li>
+  </ul>
+-->
+</div><!-- /.marketing -->
+
+     <!-- Footer
+      ================================================== -->
+     <!-- <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      </footer>
+-->
+
+      <footer class="footer">
+        <p class="pull-right"><a href="{{ login_logout_url }}">{{ url_linktext }}</a></p>
+        <p class="pull-right"><a href="#">About</a></p>
+		<p class="pull-right"><a href="#">Privacy</a></p>
+		<p class="pull-right"><a href="#">Terms</a></p>
+		<p class="pull-right"><a href="#">Help</a></p>
+		<p class="pull-right"><a href="#">Contact</a></p>
+        
+		<p>&copy; 2014 Abhik & Co</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>  
+    <!--
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+-->
+  <script type="text/javascript">
+      function viewMyStore(_id){
+          document.getElementById(_id).style.display = "block";
+      }
+      function toggle(_id){
+          var ele = document.getElementById(_id);
+          if(ele){
+              if(ele.style.display == "none"){
+                  ele.style.display = "block";
+              }
+              else{
+                  ele.style.display = "none";
+              }
+          }
+      }
+  </script>
+
+    </body>
+</html>

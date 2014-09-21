@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+    </head>
+    <body>
+        {% for userMusic in songs %}
+        
+        {% if userMusic.blob_key %}
+        <div><video controls="" width="600" height="50" name="media"><source src="http://{{ url }}/serve/{{ userMusic.blob_key.key() }}" type="audio/mp3"></video></div>        
+        {% else %}
+        <div>An anonymous person wrote:</div>
+        {% endif %}
+        {% endfor %}
+        
+        <form action="/sign" method="post">
+            <div><label>Avatar:</label></div>
+            <div><input type="file" name="img"/></div>
+            <div><textarea name="content" rows="3" cols="60"></textarea></div>
+            <div><input type="submit" value="Sign Guestbook"></div>
+        </form>
+        
+        <a href="{{ login_logout_url }}">{{ url_linktext }}</a> 
+        
+    </body>
+</html>
