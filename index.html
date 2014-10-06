@@ -1,28 +1,15 @@
-<!doctype html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
     <head>
-        <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="1;url=http://example.com">
+        <script type="text/javascript">
+            window.location.href = "http://abhikvibe.appspot.com"
+        </script>
+        <title>Page Redirection</title>
     </head>
     <body>
-        {% for greeting in greetings %}
-        
-       
-        {% if greeting.author %}
-        <b>{{ greeting.author}}</b> wrote:
-        {% else %}
-        An anonymous person wrote:
-        {% endif %}
-        <blockquote>{{ greeting.content|escape }}</blockquote>
-        {% endfor %}
-        
-        <form action="/sign" method="post">
-            <div><label>Avatar:</label></div>
-            <div><input type="file" name="img"/></div>
-            <div><textarea name="content" rows="3" cols="60"></textarea></div>
-            <div><input type="submit" value="Sign Guestbook"></div>
-        </form>
-        
-        <a href="{{ url }}">{{ url_linktext }}</a>
-        
+        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+        If you are not redirected automatically, follow the <a href='http://abhikvibe.appspot.com'>link to the site</a>
     </body>
 </html>
